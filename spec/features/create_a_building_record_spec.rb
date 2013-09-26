@@ -37,12 +37,25 @@ feature 'create a building record', %q{
 
     expect(page).to have_content('New Building Added')
     expect(Building.count).to eql(previous_count + 1)
+    expect(current_path).to eql(new_building_path)
   end
 
 
   scenario 'user enters invalid information' do
+    previous_count = Building.count
+
     visit new_building_path
+    click_button 'Add Building'
+
     expect(page).to have_content("can't be blank")
+    expect(Building.count).to eql(previous_count)
+  end
+
+
+  scenario 'user enters invalid state abbreviation' do
+    visit new_building_path
+    fill_in 'State', with: 'AB'
+    expect(page).to have_content('Invalid State Abbreviation')
   end
 
 end
