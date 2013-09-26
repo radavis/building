@@ -61,8 +61,9 @@ STATE_ABBR_TO_NAME = {
 }
 
 class Property < ActiveRecord::Base
-  belongs_to :owner
-  foreign_key :owner_id
+  belongs_to :owner,
+    #foreign_key: :owner_id,
+    inverse_of: :properties
 
   validates_presence_of :address
   validates_length_of :address, minimum: 5

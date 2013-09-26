@@ -5,6 +5,6 @@ FactoryGirl.define do
     first_name "MyString"
     last_name "MyString"
     company "MyString"
-    email "MyString"
+    email "user@example.com"
   end
 end

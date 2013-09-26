@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Owner do
+  it { should have_many :properties }
+
   it { should have_valid(:first_name).when('Sam', 'Sally') }
   it { should_not have_valid(:first_name).when(nil, '') }
 

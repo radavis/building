@@ -4,5 +4,6 @@
   <%= f.input :state %>
   <%= f.input :zip %>
   <%= f.input :description %>
+  <%= f.association :owner, label_method: :first_name %>
   <%= f.button :submit, "Add Property" %>
 <% end %>
