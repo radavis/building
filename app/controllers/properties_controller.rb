@@ -9,8 +9,12 @@ class PropertiesController < ApplicationController
   def create
     @property = Property.new(property_params)
 
-    flash[:notice] ='New Property Added' if @property.save
-    redirect_to new_property_path
+    if @property.save
+      flash[:notice] ='New Property Added'
+      redirect_to new_property_path
+    else
+      render action: 'new'
+    end
   end
 
   protected

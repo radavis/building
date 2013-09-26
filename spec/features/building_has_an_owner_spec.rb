@@ -25,7 +25,7 @@ feature 'owners', %q{
 
     visit new_owner_path
 
-    fill_in 'Fisrt name', with: 'Donald'
+    fill_in 'First name', with: 'Donald'
     fill_in 'Last name', with: 'Trump'
     fill_in 'Company', with: 'Real Estate Moguls Unltd.'
     fill_in 'Email', with: 'idontneednostinkinhairpiece@rollingindough.com'
