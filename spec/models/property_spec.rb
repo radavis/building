@@ -11,5 +11,5 @@ describe Property do
   it { should_not have_valid(:state).when(nil, '', 'Ohio') }
 
   it { should have_valid(:zip).when('02125', '19145', '34986-6968') }
-  it { should_not have_valid(:zip).when(nil, '', 'ABCD456')}
+  it { should_not have_valid(:zip).when(nil, '')}
 end
