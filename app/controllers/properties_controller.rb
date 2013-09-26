@@ -10,7 +10,7 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
 
     flash[:notice] ='New Property Added' if @property.save
-    render :new
+    redirect_to new_property_path
   end
 
   protected
