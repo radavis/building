@@ -37,7 +37,7 @@ feature 'create a Property record', %q{
 
     expect(page).to have_content('New Property Added')
     expect(Property.count).to eql(previous_count + 1)
-    #expect(current_path).to eql(new_property_path) #this is breaking my shit.
+    expect(current_path).to eql(new_property_path)
   end
 
 

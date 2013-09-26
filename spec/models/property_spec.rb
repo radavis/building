@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Property do
+  it { should belong_to :owner }
+
   it { should have_valid(:address).when('13 Elm Street', '16 Raven St') }
   it { should_not have_valid(:address).when(nil, '', '42') }
 

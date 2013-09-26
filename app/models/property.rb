@@ -61,13 +61,16 @@ STATE_ABBR_TO_NAME = {
 }
 
 class Property < ActiveRecord::Base
+  belongs_to :owner,
+    #foreign_key: :owner_id,
+    inverse_of: :properties
+
   validates_presence_of :address
   validates_length_of :address, minimum: 5
 
   validates_presence_of :city
 
   validates_presence_of :state
-  #validates_length_of :state, minimum: 2, maximum: 2
   validates :state, inclusion: { in: STATE_ABBR_TO_NAME.keys,
     message: 'Invalid State Abbreviation' }
 
